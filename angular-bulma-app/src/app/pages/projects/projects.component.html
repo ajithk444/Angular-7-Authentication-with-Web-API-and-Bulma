@@ -1,3 +1,26 @@
-<p>
-  projects works!
-</p>
+<section class="hero is-fullheight is-bold">
+  <div class="hero-body">
+    <div class="container">
+
+      <h1 class="title">List of Projects!</h1>
+      <button class="button is-danger is-outlined" (click)="openAddProject()">Add New Project</button>
+
+      <section class="section">
+        <div class="container">
+          <div class="columns is-multiline">
+            <!-- loop over our project and give them each a card -->
+            <div class="column is-4" *ngFor="let project of projects">
+              <div class="card">
+                <!-- <div class="card-title"> {{ project.isActive}}</div> -->
+                <div class="card-content">
+                  {{ project.projectName }}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
