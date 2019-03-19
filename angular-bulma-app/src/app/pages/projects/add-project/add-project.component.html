@@ -1,9 +1,16 @@
 <section class="section">
   <div class="container">
-
-    <!-- form goes here -->
-    <div id="field">
-      <input class="input is-primary" type="text" [formControl]="name" placeholder="ProjectName">
-    </div>
+    <form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()">
+      <!-- form goes here -->
+      <div class="field">
+        <input class="input is-primary" type="text" formControlName="projectName" placeholder="ProjectName">
+      </div>
+      <div class="field">
+        <input class="input is-primary" type="text" formControlName="isActive" placeholder="IsActive">
+      </div>
+      <div class="field">
+        <button type="submit" [disabled]="!createProjectForm.valid" class="button info">Submit</button>
+      </div>
+    </form>
   </div>
 </section>
