@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { fbind } from 'q';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-project',
@@ -17,8 +16,8 @@ export class AddProjectComponent {
   constructor(private fb: FormBuilder) { }
 
   createProjectForm = this.fb.group({
-    projectName: [''],
-    isActive: ['']
+    projectName: ['', Validators.required],
+    isActive: ['',Validators.required]
   });
 
   onSubmit() {
