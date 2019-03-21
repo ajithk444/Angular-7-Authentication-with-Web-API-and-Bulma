@@ -23,5 +23,4 @@ export class ProjectsComponent implements OnInit {
   openAddProject() {
     this.router.navigate(['addproject']);
   }
-
 }
