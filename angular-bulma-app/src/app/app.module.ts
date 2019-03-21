@@ -12,7 +12,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { AddProjectComponent } from './pages/projects/add-project/add-project.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProjectService } from './services/project-service.service';
+import { ProjectService } from './services/projects/project-service.service';
 
 //http
 import { HttpClientModule } from '@angular/common/http';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectService } from 'src/app/services/project-service.service';
+import { ProjectService } from 'src/app/services/projects/project-service.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
