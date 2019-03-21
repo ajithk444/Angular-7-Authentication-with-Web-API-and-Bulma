@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Reactive forms
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewProjectComponent } from './pages/projects/view-project/view-project.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProjectsComponent,
     AddProjectComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    ViewProjectComponent
   ],
   imports: [
     BrowserModule,
