@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProjectService } from 'src/app/services/project-service.service';
-import { Project } from 'src/app/interface/project';
+import { Projects } from 'src/app/interface/project';
 
 @Component({
   selector: 'app-add-project',
@@ -13,7 +13,7 @@ export class AddProjectComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private projService: ProjectService, ) { }
 
-  newProject: Project;
+  newProject: Projects;
   createProjectForm = this.fb.group({
     projectName: ['', Validators.required],
     isActive: ['', Validators.required]

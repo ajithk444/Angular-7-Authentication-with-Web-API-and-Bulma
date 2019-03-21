@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Project } from '../interface/project';
+import { Projects } from '../interface/project';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -8,16 +8,16 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ProjectService {
 
-  private _baseUrl: string = 'https://apppropla-api.azurewebsites.net/api/projects/';
+  private _baseUrl: string = 'https://apppropla-api.azurewebsites.net/api';
   private _header: HttpHeaders;
   constructor(private http: HttpClient) {
   }
 
   public get() {
-    return this.http.get<Project>(this._baseUrl);
+    return this.http.get<Projects>(this._baseUrl+'/projects');
   }
 
-  public post(projData: Project) {
-    return this.http.post<Project>(this._baseUrl, projData, { headers: this._header });
+  public post(projData: Projects) {
+    return this.http.post<Projects>(this._baseUrl+'/projects/PostProject', projData, { headers: this._header });
   }
 }
