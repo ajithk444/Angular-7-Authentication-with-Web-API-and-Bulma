@@ -10,7 +10,6 @@ import { Projects } from 'src/app/interface/project';
 })
 export class AddProjectComponent implements OnInit {
 
-
   constructor(private fb: FormBuilder, private projService: ProjectService, ) { }
 
   newProject: Projects;
@@ -21,7 +20,8 @@ export class AddProjectComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createProjectForm.value);
-    this.projService.post(this.newProject).subscribe(
+    this.projService.post(this.newProject).
+    subscribe(
       data => console.log('post' + data)
     );
   }
