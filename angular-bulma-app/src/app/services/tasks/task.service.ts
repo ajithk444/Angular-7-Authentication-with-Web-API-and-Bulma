@@ -18,6 +18,6 @@ export class TaskService {
   }
 
   post(task: Task) {
-    return this.http.post(this.url + '/tasks/createtask', task);
+    return this.http.post<Task>(this.url + '/tasks/createtask', task);
   }
 }

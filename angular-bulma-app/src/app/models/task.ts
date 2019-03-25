@@ -1,9 +1,9 @@
-import { Projects } from './project';
+import { Project } from './project';
 
 export class Task {
     public id: number;
     public taskName: string;
-    public project : Projects;
+    public project : Project;
     constructor() {
     }
 }

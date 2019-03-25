@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Projects, ProjectsDTO } from '../../models/project';
+import { Project, ProjectsDTO } from '../../models/project';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -28,8 +28,8 @@ export class ProjectService {
     return this.http.get(this.url + '/projects/GetProject/' + id);
   }
 
-  post(projData: Projects) {
-    return this.http.post<Projects>(this.url + '/projects/createproject',
+  post(projData: Project) {
+    return this.http.post<Project>(this.url + '/projects/createproject',
       projData)
   }
 

@@ -9,7 +9,7 @@ export class User {
     }
 }
 
-export class Projects {
+export class Project {
     public id: number;
     public projectName: string;
     public isActive: boolean;
