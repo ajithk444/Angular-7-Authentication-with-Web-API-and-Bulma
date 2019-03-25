@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Task } from 'src/app/models/task';
 import { TaskService } from 'src/app/services/tasks/task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -12,7 +13,9 @@ export class AddTaskComponent implements OnInit {
 
   taskCreateForm: FormGroup;
   taskObj: Task;
-  constructor(private formBuilder: FormBuilder, private taskService: TaskService) { }
+  constructor(private formBuilder: FormBuilder,
+    private taskService: TaskService,
+    private router: Router) { }
 
   ngOnInit() {
     this.taskCreateForm = this.formBuilder.group({
@@ -32,8 +35,16 @@ export class AddTaskComponent implements OnInit {
     }
     this.taskObj = new Task;
     this.taskObj.taskName = this.taskCreateForm.get('taskName').value;
-    this.taskService.post(this.taskObj).subscribe(
-      (data) => { alert(JSON.stringify(data)) }
+    this.taskService.post(this.taskObj)
+    .subscribe(
+      data => this.viewTask(data)
     );
+  }
+  viewTask(data) {
+    alert('Task created Successfully !!!');
+    if (data != null) {
+      console.log(JSON.stringify(data));
+      this.router.navigate(['tasks']);
+    }
   }
 }

@@ -21,6 +21,6 @@ export class TasksComponent implements OnInit {
   }
 
   createTask() {
-    this.router.navigate(['addTask']);
+    this.router.navigate(['addtask']);
   }
 }

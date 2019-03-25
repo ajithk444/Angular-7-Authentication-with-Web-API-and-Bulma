@@ -1,16 +1,25 @@
-<section class="section">
-  <div class="container">
-    <form [formGroup]="taskCreateForm" (ngSubmit)="onSubmit()">
-      <div class="field">
-        <label>Task Name:</label>
-        <input type="text" class="input is-danger" formControlName="taskName">
+<section class="hero is-fullheight is-bold">
+    <div class="hero-body">
+      <div class="container">
+  
+        <h1 class="title">List of Tasks!</h1>
+        <button class="button is-danger is-outlined" (click)="createTask()">Add New Project</button>
+  
+        <section class="section">
+          <div class="container">
+            <div class="columns is-multiline">
+              <!-- loop over our project and give them each a card -->
+              <div class="column is-4" *ngFor="let task of tasks">
+                <div class="card">
+                  <!-- <div class="card-title"> {{ project.isActive}}</div> -->
+                  <div class="card-content">
+                    {{ task.taskName }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="field">
-        <input type="checkbox" class="checkbox is-danger" formControlName="isActive">
-        <label> Active </label>
-      </div>
-      <div class="field">
-        <button [disabled]="!taskCreateForm.valid" class="button info">Add Task</button> </div>
-    </form>
-  </div>
-</section>
+    </div>
+  </section>
