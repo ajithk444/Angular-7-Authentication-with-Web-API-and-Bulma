@@ -1,13 +1,13 @@
 <section class="section">
-  <div class="container">
-    <form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()">
-      <!-- form goes here -->
+  <div class="container"><form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()">
+      
       <div class="field">
-        <input class="input is-primary" type="text" formControlName="projectName" placeholder="ProjectName">
+        <input class="input is-primary" type="text" formControlName="projectName" placeholder="ProjectName" required>
       </div>
       <div class="field">
-        <input class="input is-primary" type="text" formControlName="isActive" placeholder="IsActive">
-      </div>
+          <input type="checkbox" class="checkbox is-danger" formControlName="isActive">
+          <label> Active </label>
+        </div>
       <div class="field">
         <button type="submit" [disabled]="!createProjectForm.valid" class="button info">Submit</button>
       </div>

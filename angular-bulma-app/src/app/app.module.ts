@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 //Reactive forms
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewProjectComponent } from './pages/projects/view-project/view-project.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
+import { TaskService } from './services/tasks/task.service';
+import { AddTaskComponent } from './pages/tasks/add-task/add-task.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,9 @@ import { ViewProjectComponent } from './pages/projects/view-project/view-project
     AddProjectComponent,
     ContactComponent,
     HomeComponent,
-    ViewProjectComponent
+    ViewProjectComponent,
+    TasksComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { ViewProjectComponent } from './pages/projects/view-project/view-project
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

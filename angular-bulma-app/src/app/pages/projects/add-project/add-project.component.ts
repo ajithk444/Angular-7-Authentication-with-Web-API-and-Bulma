@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProjectService } from 'src/app/services/projects/project-service.service';
-import { Projects } from 'src/app/interface/project';
+import { Projects } from 'src/app/models/project';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-project',
@@ -10,23 +11,39 @@ import { Projects } from 'src/app/interface/project';
 })
 export class AddProjectComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private projService: ProjectService, ) { }
+  constructor(private fb: FormBuilder,
+    private projService: ProjectService,
+    private router: Router) {
+
+  }
 
   newProject: Projects;
   createProjectForm = this.fb.group({
-    projectName: ['', Validators.required],
-    isActive: ['', Validators.required]
+    projectName: ['', [Validators.required, Validators.minLength(6)]],
+    isActive: ['']
   });
 
   onSubmit() {
-    console.log(this.createProjectForm.value);
+    this.newProject = new Projects();
+    this.newProject.isActive = this.createProjectForm.get('isActive').value;
+    this.newProject.projectName = this.createProjectForm.get('projectName').value;
     this.projService.post(this.newProject).
-    subscribe(
-      data => console.log('post' + data)
-    );
+      subscribe(
+        data => this.viewProject(data)
+      );
+  }
+
+  viewProject(data) {
+    alert('Project created Successfully !!!');
+    if (data != null) {
+      console.log(JSON.stringify(data));
+      this.router.navigate(['projects']);
+      //this.router.navigate(['viewproject', data.id]);
+    }
   }
 
   ngOnInit() {
-
   }
+
+
 }

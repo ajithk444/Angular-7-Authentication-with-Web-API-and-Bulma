@@ -1,30 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Projects } from '../../interface/project';
+import { Projects, ProjectsDTO } from '../../models/project';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
+import { projection } from '@angular/core/src/render3';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
+  public projectsObj: ProjectsDTO;
+  private url: string;
+  private _header = new HttpHeaders().set('content-type', 'application/json');
 
-  private _baseUrl: string = 'https://apppropla-api.azurewebsites.net/api/projects';
-  //private _baseUrl: string = 'https://localhost:6001/api/projects';
-  private _header = new HttpHeaders().set('content-type', 'application/json');  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {
+    this.url = environment.APIUrl;
+  }
+  //'https://localhost:6001/api/projects'
+  get() {
+    return this.http.get(this.url + '/projects');
   }
 
-   get() {
-    return this.http.get<Projects>(this._baseUrl);
+  getById(id: number) {
+    return this.http.get(this.url + '/projects/GetProject/' + id);
   }
 
-   post(projData: Projects):Observable<Projects> {
-      return this.http.post<Projects>(this._baseUrl + '/createproject',
-                                      projData,
-                                      { headers: this._header })
+  post(projData: Projects) {
+    return this.http.post<Projects>(this.url + '/projects/createproject',
+      projData)
   }
+
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
