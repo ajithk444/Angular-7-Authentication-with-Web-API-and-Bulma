@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Task } from 'src/app/models/task';
 import { TaskService } from 'src/app/services/tasks/task.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-tasks',
@@ -12,11 +13,18 @@ import { Router } from '@angular/router';
 export class TasksComponent implements OnInit {
 
   tasks;
-  constructor(private router: Router, private taskService: TaskService) { }
+  constructor(private router: Router,
+    private taskService: TaskService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.taskService.get().subscribe(
-      (data) => { this.tasks = data }
+      (data) => {
+        this.tasks = data;
+        this.spinner.hide();
+      }
+
     );
   }
 

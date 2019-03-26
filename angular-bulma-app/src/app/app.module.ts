@@ -17,6 +17,9 @@ import { ProjectService } from './services/projects/project-service.service';
 //http
 import { HttpClientModule } from '@angular/common/http';
 
+//loader
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 //Reactive forms
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewProjectComponent } from './pages/projects/view-project/view-project.component';
@@ -40,7 +43,8 @@ import { AddTaskComponent } from './pages/tasks/add-task/add-task.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [ProjectService, TaskService],
   bootstrap: [AppComponent]
