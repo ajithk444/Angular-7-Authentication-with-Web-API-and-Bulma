@@ -31,6 +31,7 @@ import { SiteHeaderComponent } from './_layout/site-header/site-header.component
 import { AppHeaderComponent } from './_layout/app-header/app-header.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FooterComponent } from './_layout/footer/footer.component';
+import { AuthService } from './services/auth/auth-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,7 @@ import { FooterComponent } from './_layout/footer/footer.component';
     NgxSpinnerModule,
     FormsModule
   ],
-  providers: [ProjectService, TaskService],
+  providers: [ProjectService, TaskService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

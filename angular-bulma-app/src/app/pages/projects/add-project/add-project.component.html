@@ -2,7 +2,7 @@
   <div class="container"><form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()">
       
       <div class="field">
-        <input class="input is-primary" type="text" formControlName="projectName" placeholder="ProjectName" required>
+        <input class="input is-danger" type="text" formControlName="projectName" placeholder="ProjectName" required>
       </div>
       <div class="field">
           <input type="checkbox" class="checkbox is-danger" formControlName="isActive">
