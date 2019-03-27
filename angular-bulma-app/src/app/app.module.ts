@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 //components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { AddProjectComponent } from './pages/projects/add-project/add-project.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -21,15 +19,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 //Reactive forms
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ViewProjectComponent } from './pages/projects/view-project/view-project.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { TaskService } from './services/tasks/task.service';
 import { AddTaskComponent } from './pages/tasks/add-task/add-task.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
+import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
+import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
+import { AppHeaderComponent } from './_layout/app-header/app-header.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { FooterComponent } from './_layout/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     ProjectsComponent,
     AddProjectComponent,
@@ -37,14 +41,21 @@ import { AddTaskComponent } from './pages/tasks/add-task/add-task.component';
     HomeComponent,
     ViewProjectComponent,
     TasksComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    LoginComponent,
+    AppLayoutComponent,
+    SiteLayoutComponent,
+    SiteHeaderComponent,
+    AppHeaderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule
   ],
   providers: [ProjectService, TaskService],
   bootstrap: [AppComponent]
