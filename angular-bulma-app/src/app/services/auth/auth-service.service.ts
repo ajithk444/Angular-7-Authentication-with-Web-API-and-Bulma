@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Login } from 'src/app/models/login';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,29 +10,28 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
 
   private url: string;
+  invalidLogin: boolean;
+  constructor(private http: HttpClient,
+    private router: Router) {
+    this.url = 'https://localhost:6001/api'; //environment.APIUrl;
+  }
 
-  constructor(private http: HttpClient) {
-    this.url = environment.APIUrl;
-   }
-
-
-  //   registerUser(user: User) {
-  //     const body: User = {
-  //       UserName: user.UserName,
-  //       Password: user.Password,
-  //       Email: user.Email,
-  //       FirstName: user.FirstName,
-  //       LastName: user.LastName
-  //     }
-  //     var reqHeader = new HttpHeaders({'No-Auth':'True'});
-  //     return this.http.post(this.rootUrl + '/api/User/Register', body,{headers : reqHeader});
-  //   }
-
-  //   userAuthentication(userName, password) {
-  //     var data = "username=" + userName + "&password=" + password + "&grant_type=password";
-  //     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
-  //     return this.http.post(this.rootUrl + '/token', data, { headers: reqHeader });
-  //   }
+  login(login: Login) {
+    this.http.post(this.url + '/auth/login', login, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).subscribe(response => {
+      console.log('valid login');
+      let token = (<any>response).token;
+      localStorage.setItem("jwt", token);
+      this.invalidLogin = false;
+      this.router.navigate(['projects']);
+    }, err => {
+      console.log('invalid login');
+      this.invalidLogin = true;
+    });
+  }
 
   //   getUserClaims(){
   //    return  this.http.get(this.rootUrl+'/api/GetUserClaims');
