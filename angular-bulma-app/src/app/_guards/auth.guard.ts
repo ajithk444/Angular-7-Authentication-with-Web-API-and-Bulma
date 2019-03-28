@@ -3,6 +3,9 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Rout
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth/auth-service.service';
 
+
+//http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example#authentication-service-ts
+
 @Injectable({
   providedIn: 'root'
 })
