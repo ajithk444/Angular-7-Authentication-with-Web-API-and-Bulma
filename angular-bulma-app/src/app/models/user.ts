@@ -3,4 +3,5 @@ export class User {
     Password: string;
     Email: string;
     Company: string;
+    Role:string[];
 }
