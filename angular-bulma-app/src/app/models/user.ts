@@ -4,4 +4,5 @@ export class User {
     Email: string;
     Company: string;
     Role:string[];
+    Token?:string;
 }

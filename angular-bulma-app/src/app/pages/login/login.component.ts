@@ -32,17 +32,8 @@ export class LoginComponent implements OnInit {
     this.loginObj = new Login;
     this.loginObj.UserName = this.loginForm.get('username').value;
     this.loginObj.Password = this.loginForm.get('password').value;
+    console.log(this.loginObj.UserName);
+    console.log(this.loginObj.Password);
     this.authService.login(this.loginObj);
-    // .subscribe(response => {
-    //   console.log('Valid login');
-    //   let token = (<any>response).token;
-    //   localStorage.setItem("jwt", token);
-    //   this.validLogin = true;
-    //   this.router.navigate(['projects']);
-    // }, err => {
-    //   alert(err.text());
-    //   console.log('Invalid login');
-    //   this.validLogin = false;
-    // });
   }
 }
