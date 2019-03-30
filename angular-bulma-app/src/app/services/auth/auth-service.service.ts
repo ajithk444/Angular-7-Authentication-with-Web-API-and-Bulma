@@ -16,6 +16,7 @@ export class AuthService {
   private _user: User = null;
   private invalidLogin: boolean;
   _loginResponse;
+  _currentUser;
 
   constructor(private http: HttpClient,
     private router: Router) {
