@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/internal/Subject';
 @Injectable()
 export class StorageService {
 
-    constructor() {}
+    constructor() { }
 
     setSessionItem(key: string, value: string): void {
         sessionStorage.setItem(key, value);

@@ -1,13 +1,13 @@
 
-export class User {
-    public firstName: string;
-    public lastName: string;
-    public userID: string;
-    public emailID: string;
-    public userRoles: string[];
-    constructor() {
-    }
-}
+// export class User {
+//     public firstName: string;
+//     public lastName: string;
+//     public userID: string;
+//     public emailID: string;
+//     public userRoles: string[];
+//     constructor() {
+//     }
+// }
 
 export class Project {
     public id: number;

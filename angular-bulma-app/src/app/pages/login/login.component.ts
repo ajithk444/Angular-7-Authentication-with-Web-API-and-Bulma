@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Login } from 'src/app/models/login';
-import { AuthService } from 'src/app/services/auth/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,10 +30,9 @@ export class LoginComponent implements OnInit {
       return false;
     }
     this.loginObj = new Login;
-    this.loginObj.UserName = this.loginForm.get('username').value;
-    this.loginObj.Password = this.loginForm.get('password').value;
-    console.log(this.loginObj.UserName);
-    console.log(this.loginObj.Password);
-    this.authService.login(this.loginObj);
+    this.loginObj.UserName = this.loginForm.controls['username'].value;
+    this.loginObj.Password = this.loginForm.controls['password'].value;
+    this.authService.authenticate(this.loginObj);
+    console.log('successfully logged in');
   }
 }

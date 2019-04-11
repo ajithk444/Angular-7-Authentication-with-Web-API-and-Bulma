@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Project, ProjectsDTO } from '../../models/project';
+import { Project, ProjectsDTO } from '../models/project';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../environments/environment';
 import { projection } from '@angular/core/src/render3';
 
 
