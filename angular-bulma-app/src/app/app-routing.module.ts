@@ -14,6 +14,10 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AppLayoutComponent } from './_layout/app-layout.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { SiteLayoutComponent } from './_layout/site-layout.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { TeamComponent } from './pages/team/team.component';
+import { FeaturesComponent } from './pages/features/features.component';
 const routes: Routes = [
   {
     path: '',
@@ -34,22 +38,15 @@ const routes: Routes = [
     path: '',
     component: SiteLayoutComponent,
     children: [
+      { path: 'landing', component: LandingComponent },
+      { path: 'features', component: FeaturesComponent },
+      { path: 'pricing', component: PricingComponent },
+      { path: 'team', component: TeamComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
     ]
   },
-  // { path: '', component: HomeComponent },
-  // { path: 'home', component: HomeComponent },
-  // { path: 'contact', component: ContactComponent },
-  // { path: 'projects', component: ProjectsComponent },
-  // { path: 'addproject', component: AddProjectComponent },
-  // { path: 'viewproject/:id', component: ViewProjectComponent },
-  // { path: 'tasks', component: TasksComponent },
-  // { path: 'addtask', component: AddTaskComponent },
-
-  // { path: 'login', component: LoginComponent },
-  // { path: 'signup', component: SignupComponent },
-
+  
   // otherwise redirect to home by default
   { path: '**', redirectTo: '' }
 

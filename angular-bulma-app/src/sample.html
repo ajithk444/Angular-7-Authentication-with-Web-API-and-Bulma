@@ -1,0 +1,156 @@
+<!-- Check out the dark themed version on my github: https://github.com/emkelley -->
+
+
+<body>
+        <nav class="navbar topNav">
+            <div class="container ">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://ericmkelley.com">
+                        Put Logo Here 
+                    </a>
+                    <div class="navbar-burger burger" data-target="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a class="" href="#">
+                                    <i class="fa fa-user-circle"></i>
+                                </a>
+                                <span>Megan Smith</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar shadow">
+            <div class="container">
+                <div class="navbar-menu">
+                    <div class="navbar-start bottomNav ">
+                        <a class="navbar-item is-active" href="#">
+                            <i class="fa fa-tachometer-alt"></i>&nbsp; Dashboard</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-list"></i>&nbsp; List</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-user-alt"></i>
+                            </i>&nbsp; Profile</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-shopping-cart"></i>
+                            </i>&nbsp; Payment</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-star"></i>&nbsp; Upgrade</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-envelope-open"></i>&nbsp; Notification</a>
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-cog"></i>&nbsp; Settings</a>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="#">
+                            <i class="fa fa-sign-out"></i>&nbsp; Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12 main">
+                    <span class="heading">Recent Orders</span>
+                    <section id="order">
+                        <div class="order-body">
+                            <article class="media order shadow delivered">
+                                <figure class="media-left">
+                                    <i class="fa fas-box"></i>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <strong>Package for John Smith Delivered</strong>
+                                            <br>
+                                            <small>Boston - West Palm Beach | Tracking ID:
+                                                <strong>90872373904439</strong>
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-right">
+                                    <div class="tags has-addons">
+                                        <span class="tag is-light">Status:</span>
+                                        <span class="tag is-delivered">Delivered</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="media order shadow">
+                                <figure class="media-left">
+                                    <i class="fas fa-box"></i>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <strong>Package for Jane Doe Dispatched</strong>
+                                            <br>
+                                            <small>Los Angeles - Shenzhen | Tracking ID:
+                                                <strong>937347947904439</strong>
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-right">
+                                    <div class="tags has-addons">
+                                        <span class="tag is-light">Status:</span>
+                                        <span class="tag is-success">In Transit</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    <span class="heading">Stats</span>
+                    <section class="info-tiles">
+                        <div class="tile is-ancestor has-text-centered">
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">8365</p>
+                                    <p class="subtitle">Total Deliveries</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">2172</p>
+                                    <p class="subtitle">Products</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">24</p>
+                                    <p class="subtitle">Open Orders</p>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="columns">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <span class="heading">Recent Orders</span>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <div class="box">
+                        <canvas id="orderChart"></canvas>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <canvas id="ticketChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    </html>

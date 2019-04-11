@@ -38,6 +38,10 @@ import { ProjectService } from './services/project.service';
 import { AuthService } from './services/auth.service';
 import { SessionService } from './services/session.service';
 import { StorageService } from './services/storage.service';
+import { LandingComponent } from './pages/landing/landing.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { TeamComponent } from './pages/team/team.component';
+import { FeaturesComponent } from './pages/features/features.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { StorageService } from './services/storage.service';
     AppHeaderComponent,
     SignupComponent,
     AppLayoutComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+    LandingComponent,
+    PricingComponent,
+    TeamComponent,
+    FeaturesComponent
   ],
   imports: [
     BrowserModule,
