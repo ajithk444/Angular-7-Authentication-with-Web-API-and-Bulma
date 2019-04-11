@@ -4,5 +4,6 @@
         "titleBar.inactiveBackground": "#65ef0699",
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveForeground": "#15202b99"
-    }
+    },
+    "appService.deploySubpath": ""
 }
