@@ -23,12 +23,14 @@ import { ViewProjectComponent } from './pages/projects/view-project/view-project
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { AddTaskComponent } from './pages/tasks/add-task/add-task.component';
 import { LoginComponent } from './pages/login/login.component';
-import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
-import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
 import { AppHeaderComponent } from './_layout/app-header/app-header.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FooterComponent } from './_layout/footer/footer.component';
+
+//layout components
+import { AppLayoutComponent } from './_layout/app-layout.component';
+import { SiteLayoutComponent } from './_layout/site-layout.component';
 
 //services
 import { TaskService } from './services/task.service';
@@ -36,6 +38,7 @@ import { ProjectService } from './services/project.service';
 import { AuthService } from './services/auth.service';
 import { SessionService } from './services/session.service';
 import { StorageService } from './services/storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +51,11 @@ import { StorageService } from './services/storage.service';
     TasksComponent,
     AddTaskComponent,
     LoginComponent,
-    AppLayoutComponent,
-    SiteLayoutComponent,
     SiteHeaderComponent,
     AppHeaderComponent,
-    SignupComponent
+    SignupComponent,
+    AppLayoutComponent,
+    SiteLayoutComponent
   ],
   imports: [
     BrowserModule,

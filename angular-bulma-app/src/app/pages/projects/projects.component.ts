@@ -27,6 +27,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   createProject() {
-    this.router.navigate(['addproject']);
+    this.router.navigate(['/addproject']);
   }
 }

@@ -17,7 +17,6 @@ export class AppHeaderComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService,
     private sessionService: SessionService) {
 
-
   }
 
   ngOnInit() {
@@ -27,7 +26,6 @@ export class AppHeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['']);
   }
 
 }

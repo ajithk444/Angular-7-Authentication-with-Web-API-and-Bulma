@@ -44,7 +44,7 @@ export class AddTaskComponent implements OnInit {
     alert('Task created Successfully !!!');
     if (data != null) {
       console.log(JSON.stringify(data));
-      this.router.navigate(['tasks']);
+      this.router.navigate(['/tasks']);
     }
   }
 }

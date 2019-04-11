@@ -40,7 +40,7 @@ export class AuthService {
       this._currentUser.Role = _userData.role;
       this.sessionService.setUserSession(this._currentUser);
       this.loggedIn.next(true);
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['/']);
     }, err => {
       console.log('Invalid login');
     });
@@ -49,7 +49,7 @@ export class AuthService {
   logout() {
     this.loggedIn.next(false);
     this.sessionService.endUserSession();
-    // this.router.navigate(['login']);
+    this.router.navigate(['/login']);
     console.log('Logged out');
   }
 

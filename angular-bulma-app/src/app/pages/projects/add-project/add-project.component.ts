@@ -37,7 +37,7 @@ export class AddProjectComponent implements OnInit {
     alert('Project created Successfully !!!');
     if (data != null) {
       console.log(JSON.stringify(data));
-      this.router.navigate(['projects']);
+      this.router.navigate(['/projects']);
       //this.router.navigate(['viewproject', data.id]);
     }
   }
